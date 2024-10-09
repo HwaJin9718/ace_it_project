@@ -1,8 +1,7 @@
 from sqlalchemy import Column, Integer, String, Date, JSON
 from sqlalchemy.orm import declarative_base
 
-from schema.request import CreateInfoRequest, CreateHistoryRequest, CreateBusinessClientRequest, \
-    CreateCompanyVisionValuesRequest, CreateBusinessAreaRequest
+from schema.request import CreateInfoRequest, CreateHistoryRequest, CreateCompanyVisionValuesRequest, CreateBusinessAreaRequest
 
 Base = declarative_base()
 
@@ -64,9 +63,9 @@ class BusinessClient(Base):
                 f"logo_path={self.client_logo_path})")
 
     @classmethod
-    def create(cls, request: CreateBusinessClientRequest):
+    def create(cls, client_name: str):
         return cls(
-            client_name=request.client_name
+            client_name=client_name
         )
 
 

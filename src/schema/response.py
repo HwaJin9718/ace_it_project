@@ -44,6 +44,8 @@ class UpdateHistorySchema(BaseModel):
 class BusinessClientSchema(BaseModel):
     client_id: int
     client_name: str
+    client_logo_name: Optional[str] = None
+    client_logo_path: Optional[str] = None
 
     model_config = ConfigDict(from_attributes=True)
 

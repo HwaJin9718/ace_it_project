@@ -1,6 +1,7 @@
 from datetime import date
 from typing import Optional, Dict
 
+from fastapi import UploadFile
 from pydantic import BaseModel, EmailStr
 
 
@@ -18,6 +19,7 @@ class CreateHistoryRequest(BaseModel):
 # 이미지 업로드는 잠시 보류!!
 class CreateBusinessClientRequest(BaseModel):
     client_name: str
+    client_logo: Optional[UploadFile] = None
     # client_logo_name: str
 
 

@@ -1,14 +1,14 @@
 from fastapi import Depends, APIRouter, BackgroundTasks
 from fastapi_mail import FastMail, ConnectionConfig, MessageSchema
 
-from schema.request import CreateInquiryRequest, EmailSchema
+from schema.request import EmailSchema
 
 router = APIRouter(prefix="/inquiry")
 
 conf = ConnectionConfig(
     MAIL_USERNAME="ajffhsk2248@naver.com", # 보내는 사람 이메일
-    MAIL_PASSWORD="hjsong059718**",
-    MAIL_FROM="ajffhsk2248@naver.com",
+    MAIL_PASSWORD="hjsong059718**", # 보내는 사람 계정 비밀번호
+    MAIL_FROM="ajffhsk2248@naver.com", # 보내는 사람 이메일
     MAIL_PORT=587,
     MAIL_SERVER="smtp.naver.com",
     MAIL_STARTTLS=True,
@@ -38,24 +38,5 @@ def send_inquiry(
 
     fm = FastMail(conf)
     background_tasks.add_task(fm.send_message, message)
-    return {"message": "email has been sent"}
+    return {"message": "Mail sent successfully"}
 
-# @router.get("", status_code=200)
-# def get_inquiry(
-#         inquiry_repo: InquiryRepository = Depends()
-# ):
-#     inquiry: List[Inquiry] = inquiry_repo.get_inquiry()
-#
-#     return inquiry
-#
-# @router.get("/{inquiry_id}", status_code=200)
-# def get_inquiry(
-#         inquiry_id: int,
-#         inquiry_repo: InquiryRepository = Depends()
-# ):
-#     inquiry: Inquiry = inquiry_repo.get_inquiry_by_id(inquiry_id)
-#
-#     if inquiry:
-#         return inquiry
-#
-#     raise HTTPException(status_code=404, detail="Inquiry Not Found")

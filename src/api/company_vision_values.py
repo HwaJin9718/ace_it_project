@@ -1,5 +1,4 @@
 from typing import List
-from wsgiref.util import request_uri
 
 from fastapi import Depends, APIRouter, HTTPException
 
