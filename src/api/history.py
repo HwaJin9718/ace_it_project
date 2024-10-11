@@ -20,7 +20,7 @@ def get_history(
         ]
     )
 
-@router.get("/{history_section_code}", status_code=200)
+@router.get("/section_code/{history_section_code}", status_code=200)
 def get_history(
         history_section_code: int,
         history_repo : HistoryRepository = Depends()
@@ -33,7 +33,7 @@ def get_history(
         ]
     )
 
-@router.get("/{history_id}", status_code=200)
+@router.get("/id/{history_id}", status_code=200)
 def get_history(
         history_id: int,
         history_repo : HistoryRepository = Depends()
