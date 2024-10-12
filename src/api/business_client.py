@@ -57,7 +57,7 @@ def create_business_client(
             img.save(thumbnail_path)
 
         business_client.client_logo_name = client_logo.filename
-        business_client.client_logo_path = str(thumbnail_path)
+        business_client.client_logo_path = str(thumbnail_path).replace("\\", "/")
 
     business_client: BusinessClient = client_repo.update_business_client(businessClient=business_client)
 

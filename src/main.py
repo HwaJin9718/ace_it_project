@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from api import information, history, business_client, company_vision_values, business_area, inquiry
 
@@ -13,6 +14,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# 정적 파일 제공 경로 설정
+app.mount("/logos", StaticFiles(directory="logos"), name="logos")
 
 app.include_router(information.router)
 app.include_router(history.router)

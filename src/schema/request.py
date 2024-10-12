@@ -17,10 +17,10 @@ class CreateHistoryRequest(BaseModel):
 
 
 # 이미지 업로드는 잠시 보류!!
-class CreateBusinessClientRequest(BaseModel):
-    client_name: str
-    client_logo: Optional[UploadFile] = None
-    # client_logo_name: str
+# class CreateBusinessClientRequest(BaseModel):
+#     client_name: str
+#     client_logo: Optional[UploadFile] = None
+#     # client_logo_name: str
 
 
 class CreateCompanyVisionValuesRequest(BaseModel):
