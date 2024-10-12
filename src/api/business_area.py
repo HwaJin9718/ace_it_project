@@ -33,7 +33,7 @@ def get_business_area(
 
     raise HTTPException(status_code=404, detail="BusinessArea Not Found")
 
-@router.post("/", status_code=201)
+@router.post("", status_code=201)
 def create_business_area(
         request: CreateBusinessAreaRequest,
         area_repo : BusinessAreaRepository = Depends()
