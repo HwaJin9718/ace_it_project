@@ -7,7 +7,7 @@ router = APIRouter(prefix="/inquiry")
 
 conf = ConnectionConfig(
     MAIL_USERNAME="ajffhsk2248@naver.com", # 보내는 사람 이메일
-    MAIL_PASSWORD="hjsong059718**", # 보내는 사람 계정 비밀번호
+    MAIL_PASSWORD="1234", # 보내는 사람 계정 비밀번호
     MAIL_FROM="ajffhsk2248@naver.com", # 보내는 사람 이메일
     MAIL_PORT=587,
     MAIL_SERVER="smtp.naver.com",
